@@ -96,14 +96,14 @@ axes(handles.machinetoolconfig_axes);
 imshow(machinetoolfig);
 handles.machinetype = 1; 
 
-set(handles.pathsmoothpic_axes, 'position', [4, 0.4, 137.4, 18.6]);
+set(handles.pathsmoothpic_axes, 'position', [21, 9, 687, 238]);
 smoothapathfig = imread('特征点选择的对偶四元数拟合.jpg');
 axes(handles.pathsmoothpic_axes);
 imagesc(smoothapathfig);
 
 axis off
 
-set(handles.feedrateschedulingmethod_axis, 'position', [5.8, 1.38, 141, 20]);
+set(handles.feedrateschedulingmethod_axis, 'position', [30, 19, 705, 265]);
 axes(handles.feedrateschedulingmethod_axis);
 feedrateschedulefig = imread('时间最优速度规划.bmp');
 imagesc(feedrateschedulefig);
@@ -111,6 +111,11 @@ axis off
 
 axes(handles.interp_axes);
 interpfig = imread('二阶泰勒.bmp');
+imagesc(interpfig);
+axis off
+
+axes(handles.hustlogo_axes);
+interpfig = imread('合成校标.jpg');
 imagesc(interpfig);
 axis off
 
@@ -1648,7 +1653,7 @@ elseif hObject == handles.duaquatinterp_radiobutton
     set(handles.curveparam_panel, 'position', [3.6 25.2 138.5 5.3], 'visible', 'on');
     set(handles.dualsplineparameter_uipanel, 'visible', 'off');
     
-    set(handles.pathsmoothpic_axes, 'position', [15, 9, 800, 310]);
+    set(handles.pathsmoothpic_axes, 'position', [21, 9, 800, 310]);
     smoothapathfig = imread('对偶四元数插值.bmp');
     axes(handles.pathsmoothpic_axes);
     imshow(smoothapathfig);
@@ -1682,10 +1687,10 @@ elseif hObject == handles.threesplineinterp_radiobutton
     handles.smoothpath.method = 4;
     pathsmoothingmethodintroductionstring = 'Fleisig, R.V. and A.D. Spence, A constant feed and reduced angular acceleration interpolation algorithm for multi-axis machining. Computer-Aided Design, 2001. 33(1): p. 1 - 15.';
 
-    set(handles.pathsmoothpic_axes, 'position', [21, 9, 687, 380]);
+    set(handles.pathsmoothpic_axes, 'position', [21, 9, 687, 390]);
     smoothapathfig = imread('三样条插值光顺.jpg');
     axes(handles.pathsmoothpic_axes);
-    imagesc(smoothapathfig);
+    imshow(smoothapathfig);
 
     axis off
     
@@ -1829,7 +1834,7 @@ if hObject == handles.Sschedule_radiobutton
     handles.feedrateschedule.method = 1;
     set(handles.driveconstraint_checkbox, 'enable', 'off', 'value', 0);
     
-    set(handles.feedrateschedulingmethod_axis, 'position', [5.8, 1.38, 141, 20]);
+    set(handles.feedrateschedulingmethod_axis, 'position', [30, 19, 705, 265]);
     axes(handles.feedrateschedulingmethod_axis);
     feedrateschedulefig = imread('S型速度规划.bmp');
     imshow(feedrateschedulefig);
@@ -1839,7 +1844,7 @@ elseif hObject == handles.timeoptimschedule_radiobutton
     handles.feedrateschedule.method = 2;
     set(handles.driveconstraint_checkbox, 'enable', 'on', 'value', 1);
     
-    set(handles.feedrateschedulingmethod_axis, 'position', [5.8, 1.38, 141, 20]);
+    set(handles.feedrateschedulingmethod_axis, 'position', [30, 19, 705, 265]);
     axes(handles.feedrateschedulingmethod_axis);
     feedrateschedulefig = imread('时间最优速度规划.bmp');
     imshow(feedrateschedulefig);
